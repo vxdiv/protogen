@@ -15,7 +15,7 @@ RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.6 && \
     go install github.com/envoyproxy/protoc-gen-validate@v1.2.1 && \
     cp -r $GOPATH/pkg/mod/github.com/envoyproxy/protoc-gen-validate@v1.2.1/validate  /protobuf/ && \
     mkdir -p /protobuf/google/protobuf && \
-            for f in any duration descriptor empty struct timestamp wrappers; do \
+            for f in any duration descriptor empty struct timestamp wrappers type; do \
             curl -L -o /protobuf/google/protobuf/${f}.proto https://raw.githubusercontent.com/google/protobuf/master/src/google/protobuf/${f}.proto; \
             done && \
     mkdir -p /protobuf/google/api && \
